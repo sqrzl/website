@@ -1,7 +1,6 @@
 ---
 import "../styles/main.css";
 const year = new Date().getFullYear();
-const BASE = "/website";
 ---
 
 <header class="site-header">
@@ -11,7 +10,7 @@ const BASE = "/website";
       <li><a href="#features">Features</a></li>
       <li><a href="#snippet">Config</a></li>
       <li><a href="#how">How it works</a></li>
-      <li><a href={`${BASE}/docs/`}>Docs</a></li>
+      <li><a href="/docs/">Docs</a></li>
     </ul>
   </nav>
 </header>
@@ -26,7 +25,8 @@ const BASE = "/website";
       >
     </p>
     <p class="hero-actions">
-      <a role="button" class="cta" href={`${BASE}/docs/`}>Read the docs</a>
+      <a role="button" class="cta" href={`/docs/`}>Read the docs</a>
+      <a role="button" class="cta" href="/docs/">Read the docs</a>
       <a role="button" class="outline" href="#how">How it works</a>
     </p>
   </section>
@@ -95,5 +95,5 @@ views:
 </main>
 
 <footer class="site-footer container">
-  <small>© {year} sqrzl · <a href={`${BASE}/docs/`}>Docs</a></small>
+  <small>&copy; {year} sqrzl · <a href="/docs/">Docs</a></small>
 </footer>
