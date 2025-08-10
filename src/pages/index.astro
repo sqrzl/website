@@ -1,7 +1,7 @@
 ---
-import '../styles/main.css';
+import "../styles/main.css";
 const year = new Date().getFullYear();
-const BASE = '';
+const BASE = "/website";
 ---
 
 <header class="site-header">
@@ -20,8 +20,10 @@ const BASE = '';
   <section class="hero container">
     <h1 class="brand hero-title">Your backend from a config file</h1>
     <p class="hero-tagline">
-      Describe entities, views, and access rules in YAML. We serve a production REST API with RBAC,
-      row-level access, SQL views, and event history. <strong>Bring your own frontend.</strong>
+      Describe entities, views, and access rules in YAML. We serve a production
+      REST API with RBAC, row-level access, SQL views, and event history. <strong
+        >Bring your own frontend.</strong
+      >
     </p>
     <p class="hero-actions">
       <a role="button" class="cta" href={`${BASE}/docs/`}>Read the docs</a>
@@ -29,28 +31,37 @@ const BASE = '';
     </p>
   </section>
 
-<section id="how" class="how-it-works container" aria-labelledby="how-title">
+  <section id="how" class="how-it-works container" aria-labelledby="how-title">
     <h2 id="how-title" class="section-title">How to use sqrzl</h2>
     <ol class="steps">
-        <li>
-            <strong>Write your config:</strong> Create a <code>sqrzl.yaml</code> file describing your entities, views, and access rules.
-        </li>
-        <li>
-            <strong>Start the server:</strong> Run sqrzl locally or in the cloud to serve REST endpoints and OpenAPI docs from your config.
-        </li>
-        <li>
-            <strong>Test and iterate:</strong> Use the API in <em>dev</em>, update your config as needed, and verify access controls.
-        </li>
-        <li>
-            <strong>Promote safely:</strong> Move your config to <em>staging</em> or <em>prod</em> with built-in safety checks and rollback options.
-        </li>
-        <li>
-            <strong>Track changes:</strong> All writes are stored as JSON Patch events, so you can rebuild read models or audit history anytime.
-        </li>
+      <li>
+        <strong>Write your config:</strong> Create a <code>sqrzl.yaml</code> file
+        describing your entities, views, and access rules.
+      </li>
+      <li>
+        <strong>Start the server:</strong> Run sqrzl locally or in the cloud to serve
+        REST endpoints and OpenAPI docs from your config.
+      </li>
+      <li>
+        <strong>Test and iterate:</strong> Use the API in <em>dev</em>, update
+        your config as needed, and verify access controls.
+      </li>
+      <li>
+        <strong>Promote safely:</strong> Move your config to <em>staging</em> or
+        <em>prod</em> with built-in safety checks and rollback options.
+      </li>
+      <li>
+        <strong>Track changes:</strong> All writes are stored as JSON Patch events,
+        so you can rebuild read models or audit history anytime.
+      </li>
     </ol>
-</section>
+  </section>
 
-  <section id="snippet" class="config-sample container" aria-labelledby="snippet-title">
+  <section
+    id="snippet"
+    class="config-sample container"
+    aria-labelledby="snippet-title"
+  >
     <h2 id="snippet-title" class="section-title">Config example</h2>
     <figure class="code-sample" role="region" aria-label="sqrzl.yaml example">
       <pre>
