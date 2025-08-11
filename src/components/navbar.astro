@@ -1,0 +1,37 @@
+---
+const base = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname;
+const navLinks = [
+  { path: "/about", label: "About" },
+  { path: "/pricing", label: "Pricing" },
+  { path: "/docs", label: "Docs" },
+];
+---
+
+<header>
+  <nav class="container">
+    <a href={base}><strong>sqrzl</strong></a>
+    <ul>
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={`${base}${link.path}`}
+              class={
+                link.label === "Docs"
+                  ? currentPath.startsWith(`${base}${link.path}`)
+                    ? "active"
+                    : ""
+                  : currentPath === `${base}${link.path}`
+                    ? "active"
+                    : ""
+              }
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

@@ -1,34 +1,23 @@
 ---
-
+import "../styles/main.css";
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
 ---
----
-import '../styles/main.css';
----
 
-<header class="site-header">
-  <nav class="container nav-bar">
-    <strong class="logo">sqrzl</strong>
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-    </ul>
-  </nav>
-</header>
+<Navbar />
 
-<main class="container">
-  <section class="about-section">
-    <h1 class="brand section-title">About Sqrzl</h1>
-    <h2>Our Mission</h2>
+<main>
+  <section class="container">
+    <h1>About Sqrzl</h1>
     <p>
-      Sqrzl empowers teams with cutting-edge technology and seamless collaboration tools. Our mission is to make backend development simple, secure, and scalable for everyone.
+      Sqrzl is dedicated to making backend development simple, secure, and scalable
+      for everyone. Our platform instantly generates production-ready APIs from a
+      config file, so you can focus on building your product.
     </p>
-    <h2>What We Do</h2>
     <p>
-      We provide instant REST APIs, RBAC, SQL views, and event history from a single config file. Bring your own frontend and let us handle the backend complexity.
+      We believe in transparency, fair pricing, and empowering teams with modern
+      tools.
     </p>
   </section>
 </main>
-
-<footer class="site-footer container">
-  <small>&copy; 2025 Sqrzl. All rights reserved.</small>
-</footer>
+<Footer />

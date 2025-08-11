@@ -1,0 +1,42 @@
+---
+const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL;
+---
+
+<footer>
+  <div class="container">
+    <div class="grid">
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href={`${base}about`}>About</a></li>
+          <li><a href={`${base}pricing`}>Pricing</a></li>
+          <li><a href={`${base}docs/overview`}>Overview</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href={`${base}docs/quick-start`}>Quick Start</a></li>
+          <li><a href={`${base}docs/entities`}>Entities</a></li>
+          <li><a href={`${base}docs/activities`}>Activities</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>
+            <a href="https://github.com/sqrzl" target="_blank" rel="noopener"
+              >GitHub</a
+            >
+          </li>
+          <li><a href="mailto:hello@sqrzl.com">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <small>&copy; {year} sqrzl</small>
+    </div>
+  </div>
+</footer>

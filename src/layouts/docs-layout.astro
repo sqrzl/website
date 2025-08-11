@@ -1,0 +1,42 @@
+---
+import "../styles/main.css";
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
+
+const base = import.meta.env.BASE_URL;
+const navLinks = [
+  { href: "/docs/", label: "Overview" },
+  { href: "/docs/quick-start", label: "Quick Start" },
+  { href: "/docs/entities", label: "Entities" },
+  { href: "/docs/activities", label: "Activities" },
+  { href: "/docs/choreography", label: "Choreography" },
+];
+---
+
+<Navbar />
+
+<div class="container">
+  <aside class="docs-sidebar">
+    <nav>
+      <ul>
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                href={`${base}${link.href}`}
+                class={Astro.url.pathname === link.href ? "active" : ""}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </aside>
+  <main class="docs-content">
+    <slot />
+  </main>
+</div>
+
+<Footer />

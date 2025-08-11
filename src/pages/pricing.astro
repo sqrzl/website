@@ -1,0 +1,57 @@
+---
+import "../styles/main.css";
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
+const year = new Date().getFullYear();
+---
+
+<Navbar />
+
+<main>
+  <section class="container">
+    <h1>Pricing</h1>
+    <div class="grid">
+      <article>
+        <h2>Free</h2>
+        <p><strong>$0</strong> / month</p>
+        <ul>
+          <li><strong>Apps:</strong> 3</li>
+          <li><strong>Storage:</strong> 100MB</li>
+          <li><strong>Support:</strong> Community</li>
+        </ul>
+        <button>Sign Up Free</button>
+      </article>
+      <article>
+        <h2>Starter</h2>
+        <p><strong>$99</strong> / month</p>
+        <ul>
+          <li><strong>Apps:</strong> 5</li>
+          <li><strong>Storage:</strong> 5GB</li>
+          <li><strong>Support:</strong> Email</li>
+        </ul>
+        <button>Start Starter</button>
+      </article>
+      <article>
+        <h2>Pro</h2>
+        <p><strong>$299</strong> / month</p>
+        <ul>
+          <li><strong>Apps:</strong> 10</li>
+          <li><strong>Storage:</strong> 50GB</li>
+          <li><strong>Support:</strong> Priority</li>
+        </ul>
+        <button>Start Pro</button>
+      </article>
+      <article>
+        <h2>Enterprise</h2>
+        <p><strong>Contact Us</strong></p>
+        <ul>
+          <li><strong>Apps:</strong> Unlimited</li>
+          <li><strong>Storage:</strong> Custom</li>
+          <li><strong>Support:</strong> Dedicated</li>
+        </ul>
+        <button>Contact Sales</button>
+      </article>
+    </div>
+  </section>
+</main>
+<Footer />

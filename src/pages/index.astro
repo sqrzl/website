@@ -1,99 +1,25 @@
 ---
 import "../styles/main.css";
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
 const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL;
 ---
 
-<header class="site-header">
-  <nav class="container nav-bar">
-    <strong class="logo">sqrzl</strong>
-    <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
-      <li><a href="#snippet">Config</a></li>
-      <li><a href="#how">How it works</a></li>
-      <li><a href="/docs/">Docs</a></li>
-    </ul>
-  </nav>
-</header>
-
+<Navbar />
 <main>
   <section class="hero container">
-    <h1 class="brand hero-title">Your backend from a config file</h1>
+    <h1 class="hero-title">Your backend from a config file</h1>
     <p class="hero-tagline">
       Describe entities, views, and access rules in YAML. We serve a production
-      REST API with RBAC, row-level access, SQL views, and event history. <strong
-        >Bring your own frontend.</strong
-      >
+      REST API with RBAC, row-level access, SQL views, and event history.
+      <strong>Bring your own frontend. </strong>
     </p>
     <p class="hero-actions">
-      <a role="button" class="cta" href={`/docs/`}>Read the docs</a>
-      <a role="button" class="cta" href="/docs/">Read the docs</a>
-      <a role="button" class="outline" href="#how">How it works</a>
+      <a role="button" class="outline" href={`${base}docs/quick-start`}>
+        How it works
+      </a>
     </p>
   </section>
-
-  <section id="how" class="how-it-works container" aria-labelledby="how-title">
-    <h2 id="how-title" class="section-title">How to use sqrzl</h2>
-    <ol class="steps">
-      <li>
-        <strong>Write your config:</strong> Create a <code>sqrzl.yaml</code> file
-        describing your entities, views, and access rules.
-      </li>
-      <li>
-        <strong>Start the server:</strong> Run sqrzl locally or in the cloud to serve
-        REST endpoints and OpenAPI docs from your config.
-      </li>
-      <li>
-        <strong>Test and iterate:</strong> Use the API in <em>dev</em>, update
-        your config as needed, and verify access controls.
-      </li>
-      <li>
-        <strong>Promote safely:</strong> Move your config to <em>staging</em> or
-        <em>prod</em> with built-in safety checks and rollback options.
-      </li>
-      <li>
-        <strong>Track changes:</strong> All writes are stored as JSON Patch events,
-        so you can rebuild read models or audit history anytime.
-      </li>
-    </ol>
-  </section>
-
-  <section
-    id="snippet"
-    class="config-sample container"
-    aria-labelledby="snippet-title"
-  >
-    <h2 id="snippet-title" class="section-title">Config example</h2>
-    <figure class="code-sample" role="region" aria-label="sqrzl.yaml example">
-      <pre>
-      <code>
-      # sqrzl.yaml
-entities:
-  Widget:
-    schema:
-      properties:
-        id:
-          type: ulid
-        display_name:
-          type: string
-          maxLength: 120
-        price:
-          type: number
-          minimum: 0
-    rbac:
-      create: [admin]
-      read: [admin, editor, viewer]
-views:
-  widget_summaries:
-    sql: |
-      SELECT w.id, w.display_name, COUNT(c.id) AS cog_count
-      FROM widgets w LEFT JOIN cogs c ON c.widget_id=w.id
-      WHERE w.project_id = :project_id
-      </code>
-      </pre>
-    </figure>
-  </section>
 </main>
-
-<footer class="site-footer container">
-  <small>&copy; {year} sqrzl · <a href="/docs/">Docs</a></small>
-</footer>
+<Footer />
