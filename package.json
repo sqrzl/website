@@ -1,0 +1,31 @@
+{
+  "name": "sqrzl-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vp dev",
+    "build": "vp build && npm run generate",
+    "generate": "tsx ssg-build.ts",
+    "preview": "vp preview",
+    "type-check": "tsc --noEmit",
+    "lint": "vp lint .",
+    "fmt": "vp fmt ."
+  },
+  "dependencies": {
+    "@askrjs/askr": "^0.0.39",
+    "@askrjs/logos": "^0.0.1",
+    "@askrjs/lucide": "^0.0.2",
+    "@askrjs/themes": "^0.0.6"
+  },
+  "devDependencies": {
+    "@askrjs/vite": ">=0.0.2 <0.1.0",
+    "@types/node": "^25.9.1",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3",
+    "vite-plus": "^0.1.23"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
